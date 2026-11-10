@@ -20,4 +20,7 @@ typedef enum {
     WEST  = 0x1
 } Direction;
 
+Maze *createMaze(int width, int height);
+void freeMaze(Maze *maze);
+
 #endif
