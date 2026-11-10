@@ -16,10 +16,10 @@ void initQueue(int size) {
 
     free(queue);
 
-    queue = malloc(size * sizeof(Cell));
+    queue = malloc((size_t)size * sizeof(Cell));
 
     if (queue == NULL) {
-        fprintf(stderr, "Memory allocation failed\n");
+        fprintf(stderr, "Queue allocation failed\n");
         exit(EXIT_FAILURE);
     }
 
@@ -36,7 +36,6 @@ void enqueue(Cell cell) {
     }
 
     queue[rear] = cell;
-
     rear = (rear + 1) % capacity;
     count++;
 }
@@ -48,7 +47,6 @@ Cell dequeue(void) {
     }
 
     Cell cell = queue[front];
-
     front = (front + 1) % capacity;
     count--;
 

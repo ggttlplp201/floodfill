@@ -1,8 +1,7 @@
 #include <stdio.h>
-#include "queue.h"
-#include "floodfill.c"
+#include "maze.h"
+#include "floodfill.h"
 
-int main() {
-
+int main(void) {
     return 0;
 }
