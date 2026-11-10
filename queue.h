@@ -1,8 +1,13 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
-void enqueue(int value);
-int dequeue(void);
-int peek(void);
+#include "maze.h"
+
+void initQueue(int size);
+void enqueue(Cell cell);
+Cell dequeue(void);
+Cell peek(void);
+int isEmpty(void);
+void freeQueue(void);
 
 #endif
