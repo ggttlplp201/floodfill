@@ -2,16 +2,9 @@
 #define MAZE_H
 
 typedef struct {
-    int x;
-    int y;
+    int row;
+    int col;
 } Cell;
-
-typedef struct {
-    int width;
-    int height;
-    int **distances;
-    unsigned char **walls;
-} Maze;
 
 typedef enum {
     NORTH = 0x8,
@@ -20,7 +13,23 @@ typedef enum {
     WEST  = 0x1
 } Direction;
 
+typedef struct {
+    int width;
+    int height;
+    int **distances;
+    unsigned char **walls;
+} Maze;
+
 Maze *createMaze(int width, int height);
 void freeMaze(Maze *maze);
+
+int isValidCell(const Maze *maze, int row, int col);
+
+void addWall(
+    Maze *maze,
+    int row,
+    int col,
+    Direction direction
+);
 
 #endif
